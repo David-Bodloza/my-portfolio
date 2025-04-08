@@ -1,1 +1,105 @@
-Hello World!
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Bodloza - Portfolio</title>
+
+    <!--Bootstrap css-->
+    <link rel="stylesheet" href="./bootstrap/bootstrap.min.css">
+
+    <!--CSS-->
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <nav>
+            <ul class="sidebar">
+                <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26"
+                            viewBox="0 96 960 960" width="26">
+                            <path
+                                d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z" />
+                        </svg></a></li>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="/public/Skills.html">Skills</a></li>
+                <li><a href="/public/projects.html">Projects</a></li>
+                <li><a href="/public/blog/blog.html">Blog</a></li>
+                <li><a href="/public/Testimonials.html">Testimonials</a></li>
+                <li><a href="/public/contact.html">Contact</a></li>
+            </ul>
+            <ul>
+                <li><a href="./index.html">@davidbodloza</a></li>
+                <li class="hideOnMobile"><a href="/public/Skills.html">Skills</a></li>
+                <li class="hideOnMobile"><a href="/public/projects.html">Projects</a></li>
+                <li class="hideOnMobile"><a href="/public/blog/blog.html">Blog</a></li>
+                <li class="hideOnMobile"><a href="/public/Testimonials.html">Testimonials</a></li>
+                <li class="hideOnMobile"><a href="/public/contact.html">Contact</a></li>
+                <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg"
+                            height="26" viewBox="0 96 960 960" width="26">
+                            <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" />
+                        </svg></a></li>
+            </ul>
+        </nav>
+
+        <div class="bg-primary text-white text-center py-5">
+            <div class="container">
+                <h1>David Bodloza</h1>
+                <p class="lead">Web | Software Developer</p>
+                <a href="#what-i-do" class="btn btn-warning btn-lg">View My Work</a>
+            </div>
+        </div>
+
+        <div id="what-i-do" class="container text-center py-5">
+            <h2>What I Do</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card p-3">
+                        <h5>Frontend Development</h5>
+                        <p>Building sleek, responsive web designs.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card p-3">
+                        <h5>Backend Development</h5>
+                        <p>Creating secure, scalable web applications.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card p-3">
+                        <h5>UI/UX Design</h5>
+                        <p>Designing user-friendly digital experiences.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Back to top-->
+        <div style="position: fixed; bottom: 20px; right: 20px;">
+            <a href="#" class="btn btn-warning">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-arrow-up">
+                    <line x1="12" y1="19" x2="12" y2="5"></line>
+                    <polyline points="5 12 12 5 19 12"></polyline>
+                </svg>
+            </a>
+        </div>
+        <footer class="bg-dark text-white py-4">
+            <div class="container text-center">
+                <p>&copy; 2023 David Bodloza</p>
+            </div>
+        </footer>
+    </div>
+
+
+    <!--Bootstrap js-->
+    <script src="./bootstrap/bootstrap.min.js"></script>
+
+    <!--Js-->
+    <script src="./js/scripts.js"></script>
+</body>
+
+</html>

@@ -11,7 +11,7 @@
 
     <!--CSS-->
     <link rel="stylesheet" href="/css/styles.css">
-
+    <link rel="stylesheet" href="/css/blog-css/post-1.css">
 </head>
 
 <body>
@@ -47,67 +47,50 @@
         </nav>
 
         <!--Main-->
-        <main>
-            <div class="container py-5">
-                <h1>About Me</h1>
-                <div class="row">
-                    <div class="col-md-8">
-                    </div>
-                    <div class="col-md-4">
-                        <h2>Leave a Testimonial</h2>
-                        <form id="testimonial-form">
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="name" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="company" class="form-label">Company (Optional)</label>
-                                <input type="text" class="form-control" id="company">
-                            </div>
-                            <div class="mb-3">
-                                <label for="testimonial" class="form-label">Testimonial</label>
-                                <textarea class="form-control" id="testimonial" rows="3" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
-                        <a href="testimonials.html" class="btn btn-secondary mt-3">View All Testimonials</a>
+        <main class="container">
+            <div class="post">
+                <h1 class="mb-0">Blog Post 3</h1>
+                <p class="fs-3 mb-2 muted">
+                    <time datetime="2024-06-03T00:00:00.000Z"> June 3, 2024 </time>
+                </p>
+                <div class="post-body">
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis in, excepturi inventore
+                        beatae adipisci, officiis ex explicabo expedita quisquam facilis ullam placeat nemo? Voluptas,
+                        fugiat. Possimus voluptatem laboriosam ad sint!
+                    </p>
+                    <figure><a href="#" class="fw-img-link"><img src="/assets/images/myImage.jpg"
+                                alt="become healthy Living" class="img-fluid " width="346" height="245" loading="lazy"
+                                decoding="async"> </a>
+                        <figcaption class="mt-n2 small muted">The homepage for the fitness website.
+                        </figcaption>
+                    </figure>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis in, excepturi inventore
+                        beatae adipisci, officiis ex explicabo expedita quisquam facilis ullam placeat nemo? Voluptas,
+                        fugiat. Possimus voluptatem laboriosam ad sint!
+                    </p>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis in, excepturi inventore
+                        beatae adipisci, officiis ex explicabo expedita quisquam facilis ullam placeat nemo? Voluptas,
+                        fugiat. Possimus voluptatem laboriosam ad sint!
+                    </p>
+                    <h2 id="up-next-post-2">Up Next: Blog Post 2</h2>
+                    <p>Suffice to say it has also felt relatively straightforward to do and I love that I’m able to get
+                        this stuff working elsewhere with ease now.
+                    </p>
+                    <p>See you again for the next part!</p>
+                    <div class="blog-navigation">
+                        <a href="./post-2.html">
+                            <div class="previous">Previous</div> Blog Post 2
+                        </a>
+                        <a href="./post-4.html">
+                            <div class="previous">Next</div> Blog Post 4
+                        </a>
                     </div>
                 </div>
             </div>
-
-            <script>
-                document.addEventListener('DOMContentLoaded', () => {
-                    const testimonialForm = document.getElementById('testimonial-form');
-
-                    testimonialForm.addEventListener('submit', function (event) {
-                        event.preventDefault();
-                        const name = document.getElementById('name').value;
-                        const company = document.getElementById('company').value;
-                        const testimonial = document.getElementById('testimonial').value;
-
-                        // Save testimonial to local storage
-                        const existingTestimonials = JSON.parse(localStorage.getItem('testimonials')) || [];
-                        existingTestimonials.push({ name, company, testimonial });
-                        localStorage.setItem('testimonials', JSON.stringify(existingTestimonials));
-
-                        // Clear form
-                        testimonialForm.reset();
-
-                        // Display success message
-                        const successMessage = document.createElement('div');
-                        successMessage.classList.add('alert', 'alert-success', 'mt-3');
-                        successMessage.textContent = 'Thank you! Your testimonial has been submitted.';
-                        testimonialForm.parentNode.insertBefore(successMessage, testimonialForm.nextSibling);
-
-                        // Remove success message after a few seconds (optional)
-                        setTimeout(() => {
-                            successMessage.remove();
-                        }, 5000); // Remove after 5 seconds
-                    });
-                });
-            </script>
         </main>
-
         <!--Back to top-->
         <div style="position: fixed; bottom: 20px; right: 20px;">
             <a href="#" class="btn btn-warning">

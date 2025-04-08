@@ -1,0 +1,68 @@
+main {
+  padding: min(50px, 5%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+h2#source-codes {
+  margin-top: 0.7em;
+  background: linear-gradient(to bottom right, #8c93ff, #6915ff);
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 20px hsla(250, 100%, 70%, 0.1);
+}
+h2 {
+  text-align: center;
+  font-size: 2rem;
+}
+.tutorials-container {
+  max-width: 100%;
+}
+.tut-container {
+  margin: 30px auto;
+  width: min(1100px, 100%);
+  display: flex;
+  gap: 30px;
+}
+.tut-container .thumbnail {
+  height: 225px;
+  padding: 2px;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-content: center;
+  border-radius: 8px;
+}
+h3 {
+  font-size: 1.5rem;
+}
+.tutorials-container .tut-container p {
+  margin-top: 10px;
+}
+.tutorials-container .tut-container .links-container a {
+  margin-top: 15px;
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: #d1d7e2;
+  border-radius: 4px;
+  background-color: #1e232b;
+  transition: 150ms ease;
+}
+@media (max-width: 768px) {
+  .tut-container {
+    flex-direction: column;
+  }
+  .tut-container .thumbnail {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 450px) {
+  .links-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+}
