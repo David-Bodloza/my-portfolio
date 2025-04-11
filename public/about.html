@@ -48,91 +48,25 @@
 
         <!--Main-->
         <main>
-            <div class="container py-5">
-                <h1>About Me</h1>
-                <div class="row">
-                    <div class="col-md-8">
-                    </div>
-                    <div class="col-md-4">
-                        <h2>Leave a Testimonial</h2>
-                        <form id="testimonial-form">
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="name" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="company" class="form-label">Company (Optional)</label>
-                                <input type="text" class="form-control" id="company">
-                            </div>
-                            <div class="mb-3">
-                                <label for="testimonial" class="form-label">Testimonial</label>
-                                <textarea class="form-control" id="testimonial" rows="3" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
-                        <a href="testimonials.html" class="btn btn-secondary mt-3">View All Testimonials</a>
-                    </div>
-                </div>
-            </div>
-
-            <script>
-                document.addEventListener('DOMContentLoaded', () => {
-                    const testimonialForm = document.getElementById('testimonial-form');
-
-                    testimonialForm.addEventListener('submit', function (event) {
-                        event.preventDefault();
-                        const name = document.getElementById('name').value;
-                        const company = document.getElementById('company').value;
-                        const testimonial = document.getElementById('testimonial').value;
-
-                        // Save testimonial to local storage
-                        const existingTestimonials = JSON.parse(localStorage.getItem('testimonials')) || [];
-                        existingTestimonials.push({ name, company, testimonial });
-                        localStorage.setItem('testimonials', JSON.stringify(existingTestimonials));
-
-                        // Clear form
-                        testimonialForm.reset();
-
-                        // Display success message
-                        const successMessage = document.createElement('div');
-                        successMessage.classList.add('alert', 'alert-success', 'mt-3');
-                        successMessage.textContent = 'Thank you! Your testimonial has been submitted.';
-                        testimonialForm.parentNode.insertBefore(successMessage, testimonialForm.nextSibling);
-
-                        // Remove success message after a few seconds (optional)
-                        setTimeout(() => {
-                            successMessage.remove();
-                        }, 5000); // Remove after 5 seconds
-                    });
-                });
-            </script>
         </main>
 
-        <!--Back to top-->
-        <div style="position: fixed; bottom: 20px; right: 20px;">
-            <a href="#" class="btn btn-warning">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="feather feather-arrow-up">
-                    <line x1="12" y1="19" x2="12" y2="5"></line>
-                    <polyline points="5 12 12 5 19 12"></polyline>
-                </svg>
-            </a>
-        </div>
-        <!--Footer-->
-        <footer class="bg-dark text-white py-4">
-            <div class="container text-center">
-                <p>&copy; 2023 David Bodloza</p>
+        <!-- Footer -->
+        <footer class="p-5 bg-dark text-white text-center position-relative">
+            <div class="container">
+                <p class="lead">Copyright &copy; 2025 created by David Bodloza</p>
+
+                <a href="#" class="position-absolute bottom-0 end-0 p-5">
+                    <i class="bi bi-arrow-up-circle h1"></i>
+                </a>
             </div>
         </footer>
-    </div>
 
 
-    <!--Bootstrap js-->
-    <script src="/bootstrap/bootstrap.min.js"></script>
+        <!--Bootstrap js-->
+        <script src="/bootstrap/bootstrap.min.js"></script>
 
-    <!--Js-->
-    <script src="/js/scripts.js"></script>
+        <!--Js-->
+        <script src="/js/home.js"></script>
 </body>
 
 </html>

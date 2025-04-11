@@ -10,12 +10,14 @@
     <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
 
     <!--CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/skills.css">
+    <link rel="stylesheet" href="/css/home.css">
 </head>
 
 <body>
-    <div class="container">
+
+    <header>
         <!--Navigation-->
         <nav>
             <ul class="sidebar">
@@ -45,60 +47,145 @@
                         </svg></a></li>
             </ul>
         </nav>
+    </header>
 
-        <!--Skills-->
+    <!--Main-->
+    <main>
         <div class="container py-5">
-            <h1>My Skills</h1>
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="card p-3">
-                        <h2>Web Development</h2>
-                        <ul>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
-                            <li>React</li>
-                            <li>Node.js</li>
-                        </ul>
+            <h1 class="text-center mb-5">My Skills</h1>
+
+            <div class="row g-4">
+                <div class="col-md-4 mb-4">
+                    <h2 class="mb-3"><i class="fas fa-code me-2"></i> Programming</h2>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>HTML</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>CSS</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-info" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>JavaScript</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>React</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-danger" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>Node.js</span>
+                            <span>65%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" style="width: 65%"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card p-3">
-                        <h2>Design</h2>
-                        <ul>
-                            <li>UI/UX Design</li>
-                            <li>Graphic Design</li>
-                            <li>Wireframing</li>
-                        </ul>
+
+                <div class="col-md-4 mb-4">
+                    <h2 class="mb-3"><i class="fas fa-paint-brush me-2"></i> Design</h2>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>UI/UX Design</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>Graphic Design</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-info" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>Figma</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" style="width: 85%"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card p-3">
-                        <h2>Personal Training</h2>
-                        <ul>
-                            <li>Fitness Training</li>
-                            <li>Nutrition</li>
-                            <li>Program Design</li>
-                        </ul>
+                <div class="col-md-4 mb-4">
+                    <h2 class="mb-3"><i class="fas fa-paint-brush me-2"></i> Design</h2>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>UI/UX Design</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>Graphic Design</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-info" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>Figma</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" style="width: 85%"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </main>
 
-        <!--Footer-->
-        <footer class="bg-dark text-white py-4">
-            <div class="container text-center">
-                <p>&copy; 2023 David Bodloza</p>
-            </div>
-        </footer>
-    </div>
+    <!-- Footer -->
+    <footer class="p-5 bg-dark text-white text-center position-relative">
+        <div class="container">
+            <p class="lead">&copy; 2025 created by David Bodloza</p>
+
+            <a href="#" class="position-absolute bottom-0 end-0 p-5">
+                <i class="bi bi-arrow-up-circle h1"></i>
+            </a>
+        </div>
+    </footer>
+
 
 
     <!--Bootstrap js-->
-    <script src="../bootstrap/bootstrap.min.js"></script>
+    <script src="/bootstrap/bootstrap.min.js"></script>
 
     <!--Js-->
-    <script src="../js/scripts.js"></script>
+    <script src="/js/home.js"></script>
 </body>
 
 </html>

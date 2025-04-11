@@ -7,17 +7,18 @@
     <title>@davidbodloza</title>
 
     <!--Bootstrap css-->
-    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
 
     <!--CSS-->
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/projects.css">
+    <link rel="stylesheet" href="/css/projects.css">
+    <link rel="stylesheet" href="/css/home.css">
 </head>
 
 <body>
-    <div class="container">
+
+    <header>
         <!--Navigation-->
-        <nav>
+        <nav class="container">
             <ul class="sidebar">
                 <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26"
                             viewBox="0 96 960 960" width="26">
@@ -45,82 +46,77 @@
                         </svg></a></li>
             </ul>
         </nav>
+    </header>
 
-        <!--Main-->
-        <main>
-            <h2 id="source-codes">My Projects</h2>
-            <div class="tutorials-container">
-                <div class="container tut-container">
-                    <div class="thumbnail">
-                        <img height="225" width="400" src="../assets/images/myImage.jpg" alt="Project 1">
-                    </div>
-                    <div>
-                        <h3>Become Healthy Living(PTY) LTD</h3>
-                        <p>In this tutorial we used aria-attributes in html and updated them with JavaScript to make a
-                            responsive navbar accessible.</p>
-                        <div class="links-container">
-                            <a href="projects/accessible-navbar.zip" download="accessible-navbar.zip">View Code</a>
-                            <a href="https://youtu.be/m7YDWNz65iI" target="_blank">View page</a>
-
-                        </div>
-                    </div>
+    <!--Main-->
+    <main>
+        <h2 id="source-codes">My Works</h2>
+        <div class="tutorials-container">
+            <div class="container tut-container">
+                <div class="thumbnail">
+                    <img height="225" width="400" src="../assets/images/myImage.jpg" alt="Project 1">
                 </div>
-                <div class="container tut-container">
-                    <div class="thumbnail">
-                        <img height="225" width="400" src="../assets/images/myImage.jpg" alt="Project 1">
-                    </div>
-                    <div>
-                        <h3>Nutrinize</h3>
-                        <p>In this tutorial we used aria-attributes in html and updated them with JavaScript to make a
-                            responsive navbar accessible.</p>
-                        <div class="links-container">
-                            <a href="projects/accessible-navbar.zip" download="accessible-navbar.zip">View Code</a>
-                            <a href="https://youtu.be/m7YDWNz65iI" target="_blank">View page</a>
+                <div>
+                    <h3>Become Healthy Living(PTY) LTD</h3>
+                    <p>In this tutorial we used aria-attributes in html and updated them with JavaScript to make a
+                        responsive navbar accessible.</p>
+                    <div class="links-container">
+                        <a href="projects/accessible-navbar.zip" download="accessible-navbar.zip">View Code</a>
+                        <a href="https://youtu.be/m7YDWNz65iI" target="_blank">View page</a>
 
-                        </div>
-                    </div>
-                </div>
-                <div class="container tut-container">
-                    <div class="thumbnail">
-                        <img height="225" width="400" src="../assets/images/myImage.jpg" alt="Become Healthy Living">
-                    </div>
-                    <div>
-                        <h3>Davalice(PTY) LTD</h3>
-                        <p>In this tutorial we used aria-attributes in html and updated them with JavaScript to make a
-                            responsive navbar accessible.</p>
-                        <div class="links-container">
-                            <a href="projects/accessible-navbar.zip" download="accessible-navbar.zip">View Code</a>
-                            <a href="https://youtu.be/m7YDWNz65iI" target="_blank">View page</a>
-                        </div>
                     </div>
                 </div>
             </div>
-        </main>
-        <!--Back to top-->
-        <div style="position: fixed; bottom: 20px; right: 20px;">
-            <a href="#" class="btn btn-warning">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="feather feather-arrow-up">
-                    <line x1="12" y1="19" x2="12" y2="5"></line>
-                    <polyline points="5 12 12 5 19 12"></polyline>
-                </svg>
+            <div class="container tut-container">
+                <div class="thumbnail">
+                    <img height="225" width="400" src="../assets/images/myImage.jpg" alt="Project 1">
+                </div>
+                <div>
+                    <h3>Nutrinize</h3>
+                    <p>In this tutorial we used aria-attributes in html and updated them with JavaScript to make a
+                        responsive navbar accessible.</p>
+                    <div class="links-container">
+                        <a href="projects/accessible-navbar.zip" download="accessible-navbar.zip">View Code</a>
+                        <a href="https://youtu.be/m7YDWNz65iI" target="_blank">View page</a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="container tut-container">
+                <div class="thumbnail">
+                    <img height="225" width="400" src="../assets/images/myImage.jpg" alt="Become Healthy Living">
+                </div>
+                <div>
+                    <h3>Davalice(PTY) LTD</h3>
+                    <p>In this tutorial we used aria-attributes in html and updated them with JavaScript to make a
+                        responsive navbar accessible.</p>
+                    <div class="links-container">
+                        <a href="projects/accessible-navbar.zip" download="accessible-navbar.zip">View Code</a>
+                        <a href="https://youtu.be/m7YDWNz65iI" target="_blank">View page</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="p-5 bg-dark text-white text-center position-relative">
+        <div class="container">
+            <p class="lead">Copyright &copy; 2025 created by David Bodloza</p>
+
+            <a href="#" class="position-absolute bottom-0 end-0 p-5">
+                <i class="bi bi-arrow-up-circle h1"></i>
             </a>
         </div>
-        <!--Footer-->
-        <footer class="bg-dark text-white py-4">
-            <div class="container text-center">
-                <p>&copy; 2023 David Bodloza</p>
-            </div>
-        </footer>
-    </div>
+    </footer>
+
 
 
     <!--Bootstrap js-->
     <script src="../bootstrap/bootstrap.min.js"></script>
 
     <!--Js-->
-    <script src="../js/scripts.js"></script>
+    <script src="/js/home.js"></script>
 </body>
 
 </html>

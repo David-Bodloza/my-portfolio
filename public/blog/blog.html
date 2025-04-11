@@ -10,14 +10,16 @@
     <link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
 
     <!--CSS-->
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/home.css">
     <link rel="stylesheet" href="/css/blog-css/blog.css">
 </head>
 
 <body>
-    <div class="container">
-        <!--Navigation-->
-        <nav>
+
+    <!-- Header -->
+    <header>
+        <!-- Navbar -->
+        <nav class="container">
             <ul class="sidebar">
                 <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26"
                             viewBox="0 96 960 960" width="26">
@@ -46,8 +48,11 @@
             </ul>
         </nav>
 
-        <!--Main-->
-        <main>
+    </header>
+
+    <!--Main-->
+    <main>
+        <div class="container">
             <div class="archive">
                 <div key="2025">
                     <h2 class="archive-year">2025</h2>
@@ -87,32 +92,15 @@
                     </div>
                 </div>
             </div>
-        </main>
-        <!--Back to top-->
-        <div style="position: fixed; bottom: 20px; right: 20px;">
-            <a href="#" class="btn btn-warning">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="feather feather-arrow-up">
-                    <line x1="12" y1="19" x2="12" y2="5"></line>
-                    <polyline points="5 12 12 5 19 12"></polyline>
-                </svg>
-            </a>
-        </div>
-        <!--Footer-->
-        <footer class="bg-dark text-white py-4">
-            <div class="container text-center">
-                <p>&copy; 2023 David Bodloza</p>
-            </div>
-        </footer>
-    </div>
+    </main>
+
 
 
     <!--Bootstrap js-->
     <script src="/bootstrap/bootstrap.min.js"></script>
 
     <!--Js-->
-    <script src="/js/scripts.js"></script>
+    <script src="/js/home.js"></script>
 </body>
 
 </html>
