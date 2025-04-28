@@ -4,73 +4,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@davidbodloza</title>
-    <link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/home.css">
-    <link rel="stylesheet" href="/css/contact.css">
+    <meta name="description"
+        content="Get in touch with the designer, developer and author of Become Healthy living - A health and fitness website.">
+    <title>Contact | @davidbodloza</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/contact.css">
 </head>
 
 <body>
-    <div class="container">
+    <header>
 
-        <!--Navigation-->
         <nav>
             <ul class="sidebar">
-                <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26"
-                            viewBox="0 96 960 960" width="26">
-                            <path
-                                d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z" />
-                        </svg></a></li>
+                <li onclick=hideSidebar()><a href="#"><img src="/assets/icons/close.svg" alt="@davidbodloza"></a></li>
                 <li><a href="/index.html">Home</a></li>
-                <li><a href="/public/Skills.html">Skills</a></li>
+                <li><a href="/public/about.html">About</a></li>
+                <li><a href="/public/skills.html">Skills</a></li>
                 <li><a href="/public/projects.html">Projects</a></li>
-                <li><a href="/public/blog/blog.html">Blog</a></li>
-                <li><a href="/public/Testimonials.html">Testimonials</a></li>
-                <li><a href="/public/contact.html">Contact</a></li>
+                <li><a href="/public/contact.html" class="active">Contact</a></li>
             </ul>
             <ul>
-                <li><a href="/index.html">@davidbodloza</a></li>
+                <li><a href="/index.html"><span>@</span>davidbodloza</a></li>
                 <li class="hideOnMobile"><a href="/index.html">Home</a></li>
-                <li class="hideOnMobile"><a href="/public/Skills.html">Skills</a></li>
+                <li class="hideOnMobile"><a href="/public/about.html">About</a></li>
+                <li class="hideOnMobile"><a href="/public/skills.html">Skills</a></li>
                 <li class="hideOnMobile"><a href="/public/projects.html">Projects</a></li>
-                <li class="hideOnMobile"><a href="/public/blog/blog.html">Blog</a></li>
-                <li class="hideOnMobile"><a href="/public/Testimonials.html">Testimonials</a></li>
-                <li class="hideOnMobile"><a href="/public/contact.html">Contact</a></li>
-                <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg"
-                            height="26" viewBox="0 96 960 960" width="26">
-                            <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" />
-                        </svg></a></li>
+                <li class="hideOnMobile"><a href="/public/contact.html" class="active">Contact</a></li>
+                <li class="menu-button" onclick=showSidebar()><a href="#"><img src="/assets/icons/menu.svg"
+                            alt="@davidbodloza"></a></li>
             </ul>
         </nav>
-        <div class="container py-5">
+    </header>
 
-            <div class="contact_container">
-                <h1>Contact Me Please!</h1>
-                <p>Have a question or want to work together? Send me a message</p>
-                <form action="https://getform.io/f/bkkydqyb" method="POST">
-                    <div class="form_group">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form_group">
-                        <input type="email" name="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form_group">
-                        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Send message</button>
+    <main>
+        <section class="contact">
+            <h1>Contact Me</h1>
+            <p class="description">
+                Have a question or want to work together?
+                Fill out the form below, and I'll get back to you. as soon as possible!
+            </p>
 
-                    <!--Success Message-->
-                    <p id="success-message">
-                        Message sent successfully
-                    </p>
-                </form>
-            </div>
-        </div>
+            <form action="https://getform.io/f/allyreoa" method="post" class="contact-form">
 
+                <label for="name">Full Name: </label>
+                <input type="text" name="name" id="fullName" required>
 
-    </div>
-    <script src="/bootstrap/bootstrap.min.js"></script>
-    <script src="/js/home.js"></script>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" required>
+
+                <label for="message"> Message:</label>
+                <textarea name="message" id="message" rows="5" required></textarea>
+
+                <button type="submit">Send</button>
+
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - David Bodloza</p>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
 </body>
 
 </html>

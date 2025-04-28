@@ -4,69 +4,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@davidbodloza</title>
-
-    <!--Bootstrap css-->
-    <link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
-
-    <!--CSS-->
-    <link rel="stylesheet" href="/css/styles.css">
-
+    <meta name="description"
+        content="Learn more about David Bodloza, a passionate developer focused on building clean and responsive web apps.">
+    <title>About | @davidbodloza</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/about.css">
 </head>
 
 <body>
-    <div class="container">
-        <!--Navigation-->
+    <header>
+
         <nav>
             <ul class="sidebar">
-                <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26"
-                            viewBox="0 96 960 960" width="26">
-                            <path
-                                d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z" />
-                        </svg></a></li>
+                <li onclick=hideSidebar()><a href="#"><img src="/assets/icons/close.svg" alt="@davidbodloza"></a></li>
                 <li><a href="/index.html">Home</a></li>
-                <li><a href="/public/Skills.html">Skills</a></li>
+                <li><a href="/public/about.html" class="active">About</a></li>
+                <li><a href="/public/skills.html">Skills</a></li>
                 <li><a href="/public/projects.html">Projects</a></li>
-                <li><a href="/public/blog/blog.html">Blog</a></li>
-                <li><a href="/public/Testimonials.html">Testimonials</a></li>
                 <li><a href="/public/contact.html">Contact</a></li>
             </ul>
             <ul>
-                <li><a href="/index.html">@davidbodloza</a></li>
+                <li><a href="/index.html"><span>@</span>davidbodloza</a></li>
                 <li class="hideOnMobile"><a href="/index.html">Home</a></li>
-                <li class="hideOnMobile"><a href="/public/Skills.html">Skills</a></li>
+                <li class="hideOnMobile"><a href="/public/about.html" class="active">About</a></li>
+                <li class="hideOnMobile"><a href="/public/skills.html">Skills</a></li>
                 <li class="hideOnMobile"><a href="/public/projects.html">Projects</a></li>
-                <li class="hideOnMobile"><a href="/public/blog/blog.html">Blog</a></li>
-                <li class="hideOnMobile"><a href="/public/Testimonials.html">Testimonials</a></li>
                 <li class="hideOnMobile"><a href="/public/contact.html">Contact</a></li>
-                <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg"
-                            height="26" viewBox="0 96 960 960" width="26">
-                            <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" />
-                        </svg></a></li>
+                <li class="menu-button" onclick=showSidebar()><a href="#"><img src="/assets/icons/menu.svg"
+                            alt="@davidbodloza"></a></li>
             </ul>
         </nav>
-
-        <!--Main-->
-        <main>
-        </main>
-
-        <!-- Footer -->
-        <footer class="p-5 bg-dark text-white text-center position-relative">
-            <div class="container">
-                <p class="lead">Copyright &copy; 2025 created by David Bodloza</p>
-
-                <a href="#" class="position-absolute bottom-0 end-0 p-5">
-                    <i class="bi bi-arrow-up-circle h1"></i>
-                </a>
+    </header>
+    <main>
+        <section class="about">
+            <h1>About Me</h1>
+            <div class="about-container">
+                <img src="/assets/images/myImage.jpg" alt="@davidbodloza">
+                <div class="about-text">
+                    <p>
+                        I am a professional Web Developer, currently learning Full Stack development.My aim is to
+                        build clean, scalable websites and apps, and continue improving my skills and be a competent
+                        developer
+                        from any where in the world.
+                    </p>
+                </div>
             </div>
-        </footer>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 - David Bodloza</p>
+    </footer>
 
-
-        <!--Bootstrap js-->
-        <script src="/bootstrap/bootstrap.min.js"></script>
-
-        <!--Js-->
-        <script src="/js/home.js"></script>
+    <script src="/assets/js/main.js"></script>
 </body>
 
 </html>

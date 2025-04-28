@@ -4,188 +4,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@davidbodloza</title>
-
-    <!--Bootstrap css-->
-    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
-
-    <!--CSS-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="/css/home.css">
+    <meta name="description"
+        content="Explore the technical skills of David Bodloza, including Full Stack development and many more.">
+    <title>Skills | @davidbodloza</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/skills.css">
 </head>
 
 <body>
-
     <header>
-        <!--Navigation-->
+
         <nav>
             <ul class="sidebar">
-                <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26"
-                            viewBox="0 96 960 960" width="26">
-                            <path
-                                d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z" />
-                        </svg></a></li>
+                <li onclick=hideSidebar()><a href="#"><img src="/assets/icons/close.svg" alt="@davidbodloza"></a></li>
                 <li><a href="/index.html">Home</a></li>
-                <li><a href="/public/Skills.html">Skills</a></li>
+                <li><a href="/public/about.html">About</a></li>
+                <li><a href="/public/skills.html" class="active">Skills</a></li>
                 <li><a href="/public/projects.html">Projects</a></li>
-                <li><a href="/public/blog/blog.html">Blog</a></li>
-                <li><a href="/public/Testimonials.html">Testimonials</a></li>
                 <li><a href="/public/contact.html">Contact</a></li>
             </ul>
             <ul>
-                <li><a href="/index.html">@davidbodloza</a></li>
+                <li><a href="/index.html"><span>@</span>davidbodloza</a></li>
                 <li class="hideOnMobile"><a href="/index.html">Home</a></li>
-                <li class="hideOnMobile"><a href="/public/Skills.html">Skills</a></li>
+                <li class="hideOnMobile"><a href="/public/about.html">About</a></li>
+                <li class="hideOnMobile"><a href="/public/skills.html" class="active">Skills</a></li>
                 <li class="hideOnMobile"><a href="/public/projects.html">Projects</a></li>
-                <li class="hideOnMobile"><a href="/public/blog/blog.html">Blog</a></li>
-                <li class="hideOnMobile"><a href="/public/Testimonials.html">Testimonials</a></li>
                 <li class="hideOnMobile"><a href="/public/contact.html">Contact</a></li>
-                <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg"
-                            height="26" viewBox="0 96 960 960" width="26">
-                            <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" />
-                        </svg></a></li>
+                <li class="menu-button" onclick=showSidebar()><a href="#"><img src="/assets/icons/menu.svg"
+                            alt="@davidbodloza"></a></li>
             </ul>
         </nav>
     </header>
 
-    <!--Main-->
     <main>
-        <div class="container py-5">
-            <h1 class="text-center mb-5">My Skills</h1>
+        <section class="skills">
 
-            <div class="row g-4">
-                <div class="col-md-4 mb-4">
-                    <h2 class="mb-3"><i class="fas fa-code me-2"></i> Programming</h2>
-                    <div class="mb-3">
-                        <div class="d-flex justify-content-between">
-                            <span>HTML</span>
-                            <span>90%</span>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary" style="width: 90%"></div>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <div class="d-flex justify-content-between">
-                            <span>CSS</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-info" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <div class="d-flex justify-content-between">
-                            <span>JavaScript</span>
-                            <span>75%</span>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-warning" style="width: 75%"></div>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <div class="d-flex justify-content-between">
-                            <span>React</span>
-                            <span>70%</span>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-danger" style="width: 70%"></div>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <div class="d-flex justify-content-between">
-                            <span>Node.js</span>
-                            <span>65%</span>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-success" style="width: 65%"></div>
-                        </div>
-                    </div>
-                </div>
+            <h1>Expertise</h1>
+            <p class="description">These are the tools and technologies I am currently using and learning:</p>
 
-                <div class="col-md-4 mb-4">
-                    <h2 class="mb-3"><i class="fas fa-paint-brush me-2"></i> Design</h2>
-                    <div class="mb-3">
-                        <div class="d-flex justify-content-between">
-                            <span>UI/UX Design</span>
-                            <span>80%</span>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary" style="width: 80%"></div>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <div class="d-flex justify-content-between">
-                            <span>Graphic Design</span>
-                            <span>70%</span>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-info" style="width: 70%"></div>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <div class="d-flex justify-content-between">
-                            <span>Figma</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-warning" style="width: 85%"></div>
-                        </div>
-                    </div>
+            <div class="skills-card">
+                <div class="skill-card">
+                    <h2>HTML</h2>
+                    <p>Markup language for structuring web content.</p>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <h2 class="mb-3"><i class="fas fa-paint-brush me-2"></i> Design</h2>
-                    <div class="mb-3">
-                        <div class="d-flex justify-content-between">
-                            <span>UI/UX Design</span>
-                            <span>80%</span>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary" style="width: 80%"></div>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <div class="d-flex justify-content-between">
-                            <span>Graphic Design</span>
-                            <span>70%</span>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-info" style="width: 70%"></div>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <div class="d-flex justify-content-between">
-                            <span>Figma</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar bg-warning" style="width: 85%"></div>
-                        </div>
-                    </div>
+                <div class="skill-card">
+                    <h2>CSS</h2>
+                    <p>
+                        A Cascading Style Sheet, for styling the web with layout techniques and design.
+                    </p>
+                </div>
+                <div class="skill-card">
+                    <h2>Javascript</h2>
+                    <p>
+                        A programming language for adding interactivity to websites and applications.
+                    </p>
+                </div>
+                <div class="skill-card">
+                    <h2>Bootstrap</h2>
+                    <p>
+                        A framework for adding style and design to websites and applications to make them responsive to
+                        all devices.
+                    </p>
+                </div>
+                <div class="skill-card">
+                    <h2>Git & Github</h2>
+                    <p>
+                        A version control system for storing,updating and deploying website and applications.
+                    </p>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="p-5 bg-dark text-white text-center position-relative">
-        <div class="container">
-            <p class="lead">&copy; 2025 created by David Bodloza</p>
-
-            <a href="#" class="position-absolute bottom-0 end-0 p-5">
-                <i class="bi bi-arrow-up-circle h1"></i>
-            </a>
-        </div>
+    <footer>
+        <p>&copy; 2025 - David Bodloza</p>
     </footer>
 
-
-
-    <!--Bootstrap js-->
-    <script src="/bootstrap/bootstrap.min.js"></script>
-
-    <!--Js-->
-    <script src="/js/home.js"></script>
+    <script src="/assets/js/main.js"></script>
 </body>
 
 </html>
