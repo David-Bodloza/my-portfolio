@@ -1,186 +1,942 @@
-/*Fonts coming soon...*/
+/* Font Imports  */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&display=swap");
 
-/*Reset some default browser styles*/
-* {
+/* --- CSS Variables --- */
+:root {
+  --color-primary: #008080; /* Muted Teal - Accent color */
+  --color-secondary: #000000; /* Black - Main text, dark elements */
+  --color-background-light: #f2f2f2; /* Light Grey - Light backgrounds */
+  --color-background-dark: #333333; /* Dark Grey - Section backgrounds, subtle darks */
+  --color-text-light: #ffffff; /* White - Text on dark backgrounds */
+  --color-text-dark: #444444; /* Dark Grey - Text on light backgrounds */
+
+  --font-heading: "Roboto", sans-serif; /* Modern sans-serif */
+  --font-body: "Open Sans", sans-serif; /* Readable body font */
+
+  --container-max-width: 1200px; /* Max width for content */
+  --section-padding: 80px 0; /* Consistent padding for sections */
+}
+
+/* --- Basic Reset & Global Styles --- */
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body {
-  font-family: monospace;
-  background-color: #262626;
-  color: #bcb4b4;
-  line-height: 1.6;
-  padding-bottom: 50px;
-}
-header {
-  background: #333;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 1rem;
+
+html {
+  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
 }
 
-nav ul {
-  width: 80%;
+body {
+  font-family: var(--font-body);
+  line-height: 1.6;
+  color: var(--color-text-dark);
+  background-color: var(--color-background-light);
+  overflow-x: hidden; /* Prevent horizontal scroll on mobile */
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-primary); /* Default link color */
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-secondary); /* Darken on hover */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Remove extra space below images */
+}
+
+ul {
   list-style: none;
+}
+
+/* --- Reusable Container Class --- */
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 20px; /* Padding for smaller screens */
+}
+
+/* --- Section Title and Description Styles --- */
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 2.8em;
+  color: var(--color-secondary);
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px; /* Space for underline effect */
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px; /* Short underline */
+  height: 3px;
+  background-color: var(--color-primary);
+  margin: 10px auto 0; /* Center the underline */
+}
+
+.section-description {
+  font-size: 1.1em;
+  color: var(--color-text-dark);
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px;
+}
+
+/* Text color variants for dark backgrounds */
+.white-text {
+  color: var(--color-text-light);
+}
+.white-text.section-title {
+  color: var(--color-text-light);
+}
+.white-text.section-description {
+  color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1em;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  border: 2px solid transparent; /* For outline effect */
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  border-color: var(--color-primary);
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-text-light);
+  border-color: var(--color-secondary);
+}
+
+.btn-secondary:hover {
+  background-color: transparent;
+  color: var(--color-secondary);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  transform: translateY(-2px);
+}
+
+/* For larger buttons, like on a CTA */
+.btn-large {
+  padding: 15px 35px;
+  font-size: 1.1em;
+}
+
+/* --- Header Styles --- */
+.main-header {
+  background-color: var(--color-secondary); /* Black header */
+  padding: 20px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky; /* Make header sticky */
+  top: 0;
+  z-index: 100; /* Ensure it's above other content */
+}
+
+.header-inner {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  margin: auto;
 }
-nav li {
-  height: 50px;
+
+.logo a {
+  font-family: var(--font-heading);
+  font-size: 1.8em;
+  font-weight: 700;
+  color: var(--color-primary); /* Teal logo */
+  transition: color 0.3s ease;
 }
-nav li:first-child {
+
+.logo a:hover {
+  color: var(--color-text-light); /* White on hover */
+}
+
+.main-nav ul {
+  display: flex; /* Horizontal nav items */
+  gap: 30px;
+}
+
+.main-nav ul li a {
+  color: var(--color-text-light); /* White nav links */
+  font-weight: 500;
+  position: relative; /* For underline effect */
+  padding-bottom: 5px; /* Space for underline */
+}
+
+.main-nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primary); /* Teal underline */
+  transition: width 0.3s ease;
+}
+
+.main-nav ul li a:hover::after,
+.main-nav ul li a.active::after {
+  /* Active class for current page */
+  width: 100%;
+}
+
+.main-nav ul li a.active {
+  color: var(--color-primary); /* Active link is teal */
+}
+
+/* --- Footer Styles --- */
+.main-footer {
+  background-color: var(--color-secondary); /* Black footer */
+  color: rgba(255, 255, 255, 0.7);
+  padding: 40px 0;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column; /* Stack on mobile */
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-social a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.5em;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: var(--color-primary); /* Teal on hover */
+}
+
+/* --- Media Queries (General) --- */
+@media (max-width: 768px) {
+  /* .main-nav { display: none; } */ /* Removed/Commented out as per above */
+
+  .main-header .container {
+    flex-direction: column; /* Stack logo and nav vertically */
+    gap: 20px; /* Space between logo and nav */
+    padding-bottom: 20px; /* Add some padding at the bottom of header */
+  }
+
+  .main-nav {
+    display: block; /* Ensure it's not overridden */
+    width: 100%; /* Take full width */
+    text-align: center; /* Center the nav items */
+  }
+
+  .main-nav ul {
+    flex-direction: column; /* Stack nav items vertically */
+    gap: 15px; /* Space between vertically stacked links */
+  }
+
+  .main-nav ul li a {
+    padding: 10px 0; /* More vertical padding for clickable area */
+    display: block; /* Make links block level to take full width */
+  }
+}
+@media (max-width: 768px) {
+  /* Remove or comment out this line if it's still present, as we want the nav to be visible */
+  /* .main-nav { display: none; } */
+
+  .main-header .container {
+    flex-direction: column; /* THIS IS KEY: Stack logo and nav vertically */
+    gap: 20px; /* Space between logo and nav */
+    padding-bottom: 20px; /* Add some padding at the bottom of header */
+    align-items: center; /* Center the logo and nav horizontally */
+  }
+
+  .main-nav {
+    display: block; /* Ensure it's displayed */
+    width: 100%; /* Take full width to center its content */
+    text-align: center; /* THIS IS KEY: Center the individual nav links */
+  }
+
+  .main-nav ul {
+    /* Keep this as row. It's already the default flex-direction. */
+    /* We just need to make sure there's enough space for the links */
+    flex-direction: row; /* Ensure nav items remain in a row */
+    flex-wrap: wrap; /* Allow links to wrap to the next line if they don't fit */
+    justify-content: center; /* Center the nav items within their row */
+    gap: 15px; /* Space between horizontally row-aligned links */
+  }
+
+  /* You might want to adjust font size for smaller screens if links become too cramped */
+  .main-nav ul li a {
+    font-size: 0.9em; /* Slightly smaller font for mobile nav links */
+    padding: 5px 10px; /* Adjust padding as needed for spacing */
+  }
+}
+
+@media (min-width: 769px) {
+  .main-header .container {
+    justify-content: space-between;
+  }
+  .footer-content {
+    flex-direction: row; /* Row on desktop */
+    justify-content: space-between;
+  }
+}
+
+/*----------------------------------------------------------------------------------*/
+/* Main Hero section*/
+/* --- Homepage Hero Section --- */
+.hero-section {
+  background-color: var(--color-background-dark); /* Dark grey background */
+  color: var(--color-text-light); /* White text */
+  padding: var(--section-padding); /* Use global padding */
+  min-height: 85vh; /* Ensure it takes up most of the viewport height */
+  display: flex;
+  align-items: center; /* Vertically center content */
+}
+
+.hero-section > .container {
+  /* Direct child container for Flexbox */
+  display: flex;
+  flex-direction: column; /* Stack on mobile by default */
+  align-items: center; /* Center items when stacked */
+  gap: 60px; /* Space between content and image */
+  text-align: center; /* Center text on mobile */
+}
+
+.hero-content {
+  flex: 1; /* Allow content to grow */
+  max-width: 600px; /* Limit content width */
+  /* Animation for content */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInSlideUp 1s forwards ease-out 0.5s; /* Delay start */
+}
+
+.hero-name {
+  font-family: var(--font-heading);
+  font-size: 3.8em;
+  color: var(--color-primary); /* Teal for your name */
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: 2.2em;
+  color: var(--color-text-light);
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.hero-tagline {
+  font-size: 1.2em;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 40px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px; /* Space between buttons */
+  justify-content: center; /* Center buttons on mobile */
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+}
+
+.hero-image-container {
+  flex: 0 0 auto; /* Don't grow, don't shrink, auto basis */
+  width: 250px; /* Fixed width for image */
+  height: 250px; /* Fixed height for image */
+  border-radius: 50%; /* Make it circular */
+  overflow: hidden; /* Ensure image stays within circle */
+  border: 5px solid var(--color-primary); /* Teal border */
+  box-shadow: 0 0 0 10px rgba(0, 128, 128, 0.2); /* Subtle glow */
+  /* Animation for image */
+  opacity: 0;
+  transform: scale(0.8);
+  animation: fadeInZoomIn 1s forwards ease-out 0.8s; /* Slightly delayed from text */
+}
+
+.hero-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Crop image to fit circular container */
+}
+
+/* Animations */
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInZoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* --- Media Queries for Homepage Hero --- */
+@media (min-width: 768px) {
+  .hero-section > .container {
+    flex-direction: row; /* Row layout on desktop */
+    text-align: left; /* Align text left */
+    justify-content: space-between; /* Space out content and image */
+  }
+
+  .hero-content {
+    order: 1; /* Content first */
+    text-align: left; /* Ensure text alignment for buttons */
+  }
+
+  .hero-image-container {
+    order: 2; /* Image second */
+    width: 300px; /* Larger image on desktop */
+    height: 300px;
+  }
+
+  .hero-buttons {
+    justify-content: flex-start; /* Align buttons to the left */
+  }
+
+  .hero-name {
+    font-size: 4.5em; /* Larger on desktop */
+  }
+  .hero-title {
+    font-size: 2.8em;
+  }
+  .hero-tagline {
+    font-size: 1.3em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-name {
+    font-size: 5.5em;
+  }
+  .hero-title {
+    font-size: 3.5em;
+  }
+}
+
+/*-------------------------------------------------------------------------------------*/
+/* --- Inner Page Hero Styles (for About, Projects, Contact) --- */
+.page-hero {
+  /* Background image is set inline in HTML for flexibility */
+  background-color: var(--color-background-dark); /* Fallback color */
+  height: 40vh; /* Shorter hero for inner pages */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--color-text-light);
+  margin-bottom: 60px; /* Space below hero */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.page-hero h1 {
+  font-family: var(--font-heading);
+  font-size: 3.5em;
+  color: var(--color-primary); /* Teal for main heading */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 10px;
+}
+
+.page-hero p {
+  font-size: 1.2em;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Media Queries for Inner Page Hero */
+@media (min-width: 768px) {
+  .page-hero {
+    height: 50vh; /* Taller hero on desktop */
+  }
+  .page-hero h1 {
+    font-size: 5em;
+  }
+}
+
+/* --- Personal Story Section (About Me) --- */
+.story-section {
+  padding: var(--section-padding);
+  background-color: var(--color-text-light); /* White background */
+}
+
+.story-content-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Stack on mobile */
+  gap: 50px; /* Space between text and image */
+  align-items: center;
+}
+
+.story-text p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: var(--color-text-dark);
+}
+
+.story-text p:last-child {
+  margin-bottom: 0;
+}
+
+.story-image {
+  text-align: center;
+}
+
+.story-image img {
+  max-width: 350px; /* Max width for the image */
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.story-image img:hover {
+  transform: scale(1.03); /* Slight zoom on hover */
+}
+
+/* Media Query for Story Section */
+@media (min-width: 992px) {
+  .story-content-grid {
+    grid-template-columns: 2fr 1fr; /* Text wider than image on desktop */
+    text-align: left;
+  }
+  .story-section .section-title {
+    text-align: left; /* Align title left on desktop */
+  }
+  .story-section .section-title::after {
+    margin: 10px 0 0; /* Align underline left */
+  }
+}
+
+/* --- Mission, Vision, Objectives Section (MVO) --- */
+.mvo-section {
+  padding: var(--section-padding);
+  background-color: var(--color-background-dark); /* Dark background */
+  color: var(--color-text-light);
+}
+
+.mvo-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Stack on mobile */
+  gap: 40px; /* Space between MVO items */
+  margin-top: 50px;
+}
+
+.mvo-item {
+  background-color: var(--color-secondary); /* Black card background */
+  padding: 35px;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mvo-item:hover {
+  transform: translateY(-8px); /* Lift more on hover */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.mvo-item .icon-large {
+  font-size: 3.5em;
+  color: var(--color-primary); /* Teal icons */
+  margin-bottom: 20px;
+}
+
+.mvo-item h3 {
+  font-family: var(--font-heading);
+  font-size: 1.8em;
+  color: var(--color-text-light);
+  margin-bottom: 15px;
+}
+
+.mvo-item p {
+  font-size: 1.05em;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+}
+
+.mvo-item ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+  text-align: left; /* Align list items left */
+  max-width: 350px; /* Constrain list width */
+  margin-left: auto;
   margin-right: auto;
 }
 
-nav a {
-  height: 100%;
-  padding: 0 30px;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  font-weight: 600;
-  color: #bcb4b4;
-
-  &:hover {
-    color: #f0f0f0;
-  }
+.mvo-item ul li {
+  font-size: 1em;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 25px; /* Space for custom bullet */
 }
 
-.menu-button {
-  display: none;
-}
-.sidebar {
-  position: fixed;
+.mvo-item ul li::before {
+  content: "\f00c"; /* Font Awesome checkmark icon */
+  font-family: "Font Awesome 6 Free"; /* Ensure correct Font Awesome version for solid icon */
+  font-weight: 900;
+  color: var(--color-primary);
+  position: absolute;
+  left: 0;
   top: 0;
-  right: 0;
-  height: 100vh;
-  width: 250px;
-  background-color: #222;
-  backdrop-filter: blur(12px);
-  box-shadow: -10px 0 10px #363633;
-  list-style: none;
-  display: none;
+}
+
+/* Media Queries for MVO Grid */
+@media (min-width: 768px) {
+  .mvo-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+  }
+}
+
+@media (min-width: 992px) {
+  .mvo-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+  }
+}
+
+/* --- Call to Action Section (Generic) --- */
+.cta-section {
+  padding: var(--section-padding);
+  background-color: var(--color-background-light); /* Light background */
+  text-align: center;
+}
+
+.cta-section .btn {
+  margin-top: 30px; /* Space above buttons */
+}
+
+/*----------------------------------------------------------------------------------*/
+/* --- Projects Section --- */
+.projects-section {
+  padding: var(--section-padding);
+  background-color: var(--color-background-light); /* Light background */
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Stack on mobile */
+  gap: 40px; /* Space between project cards */
+  margin-top: 50px;
+}
+
+.project-card {
+  background-color: var(--color-text-light); /* White card background */
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensure image corners are rounded */
+  display: flex;
+  flex-direction: column; /* Stack image and details */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px); /* Lift card slightly on hover */
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+}
+
+.project-card img {
+  width: 100%;
+  height: 300px; /* Fixed height for consistent image size */
+  object-fit: cover; /* Crop image to fit */
+  border-bottom: 1px solid #eee; /* Subtle separator */
+}
+
+.project-details {
+  padding: 30px;
+  flex: 1; /* Allow details to take up remaining height */
+  display: flex; /* Use flex for details to push links to bottom */
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-.sidebar li {
-  width: 100%;
-}
-.sidebar a {
-  width: 100%;
-}
-.active {
-  color: #fff;
-}
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #333;
-  background: #363636;
-  text-align: center;
-  color: #fff;
-  padding: 10px 0;
-  font-weight: 700;
-  font-size: 1.4rem;
 }
 
-.active {
-  color: #fff;
-  font-weight: 700;
-  text-decoration: underline;
-  text-underline-offset: 0.5rem;
-}
-/*Hero*/
-.hero {
-  padding: 8rem 2rem;
-  max-width: 768px;
-  width: 80%;
-  margin: auto;
-  text-align: center;
-}
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-.hero p {
-  font-size: 1.2rem;
-}
-.hero p .hobbies {
-  font-weight: 700;
-  text-decoration: underline;
-  text-decoration-color: rgba(255, 255, 255, 0.25);
-  text-underline-offset: 0.4rem;
-  line-height: inherit;
-  color: #fff;
-  transition: all 0.3s ease-in-out;
-  text-decoration-skip-ink: auto;
+.project-details h3 {
+  font-family: var(--font-heading);
+  font-size: 1.8em;
+  color: var(--color-secondary);
+  margin-bottom: 10px;
 }
 
-.hero .cta-button {
-  display: inline-block;
-  background: #bcb4b4;
-  color: #363636;
-  padding: 0.75rem 1.5rem;
-  text-decoration: none;
-  border-radius: 10px;
-  font-size: 1.2rem;
+.project-details .project-category {
+  font-size: 0.9em;
+  color: var(--color-primary); /* Teal for category */
   font-weight: 600;
-  margin-top: 2rem;
+  margin-bottom: 15px;
+}
 
-  &:hover {
-    background-color: #fbf9f9;
+.project-details p {
+  font-size: 1em;
+  color: var(--color-text-dark);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.project-features {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  margin-bottom: 25px; /* Space before links */
+}
+
+.project-features li {
+  font-size: 0.95em;
+  color: var(--color-text-dark);
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 25px;
+}
+
+.project-features li::before {
+  content: "\f00c"; /* Font Awesome checkmark */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: var(--color-primary);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.project-links {
+  margin-top: auto; /* Pushes links to the bottom if content varies */
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap; /* Allow buttons to wrap */
+}
+
+/* Small button size for project links */
+.btn-small {
+  padding: 8px 18px;
+  font-size: 0.9em;
+}
+
+/* Media Queries for Projects Grid */
+@media (min-width: 992px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on desktop */
+  }
+
+  .project-card {
+    flex-direction: row; /* Side-by-side layout for image and details */
+    text-align: left;
+  }
+
+  .project-card img {
+    width: 40%; /* Image takes 40% width */
+    height: auto; /* Auto height to maintain aspect ratio */
+    border-bottom: none;
+    border-right: 1px solid #eee; /* Vertical separator */
+  }
+  .project-details {
+    width: 60%; /* Details take 60% width */
+  }
+  .project-details .section-title,
+  .project-details .section-description {
+    text-align: left;
+  }
+  .project-features {
+    margin-left: 0; /* Align list to left */
   }
 }
 
-/*Media Queries*/
-@media (max-width: 768px) {
-  .hideOnMobile {
-    display: none;
-  }
-  .menu-button {
-    display: block;
-  }
+/*--------------------------------------------------------------------------------*/
+/* --- Contact Info Section (for Portfolio) --- */
+.contact-info-section {
+  padding: var(--section-padding);
+  background-color: var(--color-background-light); /* Light grey background */
+}
 
-  /*Hero*/
-  .hero {
-    width: 100%;
-  }
+.contact-details-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Stack on mobile */
+  gap: 30px; /* Space between items */
+  margin-top: 50px;
+}
 
-  .hero .cta-button {
-    font-size: 1rem;
+.contact-detail-item {
+  background-color: var(--color-text-light); /* White card background */
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-detail-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.contact-detail-item .icon-large {
+  font-size: 3.5em;
+  color: var(--color-primary); /* Teal icons */
+  margin-bottom: 20px;
+}
+
+.contact-detail-item h3 {
+  font-family: var(--font-heading);
+  font-size: 1.8em;
+  color: var(--color-secondary);
+  margin-bottom: 10px;
+}
+
+.contact-detail-item p {
+  font-size: 1em;
+  color: var(--color-text-dark);
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.contact-detail-item .detail-link,
+.contact-detail-item .detail-text {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: var(--color-primary); /* Teal for links/important text */
+  word-break: break-word; /* Helps with long emails/numbers */
+}
+
+.contact-detail-item .detail-link:hover {
+  color: var(--color-secondary);
+  text-decoration: underline;
+}
+
+/* Media Queries for Contact Details Grid */
+@media (min-width: 768px) {
+  .contact-details-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
   }
 }
 
-@media (max-width: 480px) {
-  .sidebar {
-    width: 100%;
-  }
-
-  /*Hero*/
-  .hero {
-    padding: 2rem 1rem;
-    max-width: 600px;
-    text-align: center;
-  }
-  .hero h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-  .hero p {
-    font-size: 1.1rem;
-  }
-
-  /*Footer*/
-  footer {
-    padding: 10px;
-    font-size: 1rem;
+@media (min-width: 992px) {
+  .contact-details-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
   }
 }
+
+/* --- Contact Form Section (for Portfolio) --- */
+.contact-form-section {
+  padding: var(--section-padding);
+  background-color: var(--color-background-dark); /* Dark background for form */
+  color: var(--color-text-light); /* White text for titles/descriptions */
+}
+
+.contact-form {
+  max-width: 800px; /* Slightly wider form */
+  margin: 40px auto 0;
+  background-color: var(
+    --color-secondary
+  ); /* Black background for form container */
+  padding: 50px; /* More padding */
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Stronger shadow */
+}
+
+.contact-form .form-group {
+  margin-bottom: 30px; /* More space between groups */
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: var(--color-text-light); /* White labels */
+  font-size: 1.1em;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="subject"], /* Added subject type */
+.contact-form textarea {
+  width: 100%;
+  padding: 15px 20px; /* More padding inside inputs */
+  border: 1px solid var(--color-background-dark); /* Dark grey border */
+  border-radius: 5px;
+  font-size: 1.05em;
+  color: var(--color-secondary); /* Dark text input */
+  background-color: var(
+    --color-background-light
+  ); /* Light grey input background */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form input[type="subject"]:focus,
+.contact-form textarea:focus {
+  border-color: var(--color-primary); /* Teal border on focus */
+  box-shadow: 0 0 0 4px rgba(0, 128, 128, 0.3); /* Teal glow on focus */
+  outline: none;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form .btn-large {
+  width: auto; /* Allow button to size to content */
+  margin: 0 auto; /* Center button */
+  display: block; /* Make it a block element to allow centering */
+  text-align: center;
+}
+
+/* --- Social CTA Section (for Contact page) --- */
+.social-cta-section {
+  padding: var(--section-padding);
+  background-color: var(--color-background-light); /* Light grey background */
+  text-align: center;
+
+  a {
+    color: #008080;
+  }
+}
+
+/* Reusing .footer-social directly */
+/* (No new CSS needed for .footer-social itself, it's defined globally) */

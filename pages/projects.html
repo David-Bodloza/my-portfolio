@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@davidbodloza | Homepage</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="container header-inner">
+            <div class="logo">
+                <a href="index.html">@davidbodloza</a>
+            </div>
+            <nav class="main-nav" id="desktop-nav">
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/pages/about.html">About Me</a></li>
+                    <li><a href="/pages/projects.html">My Projects</a></li>
+                    <li><a href="/pages/contact.html">Contact Me</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero"
+            style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/assets/img/me.jpg');">
+            <div class="container">
+                <h1>My Projects</h1>
+                <p>A showcase of my full stack development work, demonstrating skills from design to deployment.</p>
+            </div>
+        </section>
+
+        <section class="projects-section">
+            <div class="container">
+                <h2 class="section-title">My Portfolio in Action</h2>
+                <p class="section-description">From concept to deployment, here's a selection of my recent work.</p>
+
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="/assets/img/project1.png" alt="Screenshot of Christian Refugees Aid Website">
+                        <div class="project-details">
+                            <h3>SHCRA Website</h3>
+                            <p class="project-category">Self Help Christian Refugees Association</p>
+                            <p>A multi-page, responsive website built for a non-profit organization. Features include a
+                                dynamic hero, services overview, detailed about page with impact gallery, team section,
+                                and a contact form.</p>
+                            <ul class="project-features">
+                                <li>Responsive design for all devices</li>
+                                <li>Clean, empathetic UI/UX</li>
+                                <li>Interactive navigation & CTA elements</li>
+                                <li>CSS Grid and Flexbox layouts</li>
+                                <li>JavaScript for enhanced interactivity</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="https://shcra.netlify.app/" target="_blank"
+                                    class="btn btn-primary btn-small">Go Live <i
+                                        class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/David-Bodloza" target="_blank"
+                                    class="btn btn-outline btn-small">GitHub <i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container text-center">
+                <h2 class="section-title">Ready to Collaborate?</h2>
+                <p class="section-description">Have a project in mind or an opportunity for a dedicated developer?</p>
+                <a href="contact.html" class="btn btn-primary btn-large">Let's Talk</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <p>&copy; <span id="current-year"></span> - David Bodloza. All Rights Reserved.</p>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/davidbodloza" target="_blank" aria-label="LinkedIn"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/David-Bodloza" target="_blank" aria-label="GitHub"><i
+                        class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+
+</html>
